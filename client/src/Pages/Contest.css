@@ -1,0 +1,582 @@
+/* Base Styles */
+.contest-container {
+  position: relative;
+  min-height: 100vh;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Spline Background */
+.spline-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.spline-background iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  pointer-events: none;
+}
+
+/* Content Container */
+.contest-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header Section */
+.contest-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contest-header h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #ffd700, #ffa500);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  color: #f0f0f0;
+  margin-bottom: 2rem;
+}
+
+.deadline-box {
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 10px;
+  padding: 1.5rem;
+  max-width: 500px;
+  margin: 2rem auto 0;
+}
+
+.deadline {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffd700;
+  margin: 0.5rem 0;
+}
+
+.note {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-top: 0.5rem;
+}
+
+/* Section Headers */
+h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 2rem;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Themes Section */
+.themes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.theme-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(255, 215, 0, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.theme-card:hover::before {
+  opacity: 1;
+}
+
+.theme-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.theme-card:hover .theme-icon {
+  transform: scale(1.2) rotate(5deg);
+}
+
+.theme-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #ffd700;
+}
+
+.theme-card p {
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+/* Prize Card Section */
+.single-prize-container {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+  perspective: 1000px;
+}
+
+.prize-card {
+  background: linear-gradient(145deg, #1a1a2e, #16213e);
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 215, 0, 0.15);
+  transform-style: preserve-3d;
+  z-index: 1;
+}
+
+.prize-glow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.15) 0%, rgba(255, 215, 0, 0) 70%);
+  border-radius: 50%;
+  top: -100px;
+  right: -100px;
+  z-index: -1;
+  opacity: 0.7;
+  animation: float 6s ease-in-out infinite;
+}
+
+.prize-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffd700;
+  margin-bottom: 2rem;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;
+}
+
+.prize-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.prize-benefits li {
+  padding: 1rem 1rem 1rem 3rem;
+  margin: 0.8rem 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  position: relative;
+  font-size: 1.1rem;
+  color: #f0f0f0;
+  border-left: 3px solid #ffd700;
+  transition: all 0.3s ease;
+}
+
+.prize-benefits li:hover {
+  background: rgba(255, 215, 0, 0.1);
+  transform: translateX(5px);
+}
+
+.benefit-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ffd700;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.prize-ribbon {
+  position: absolute;
+  top: 20px;
+  right: -30px;
+  background: linear-gradient(45deg, #ff8a00, #ffd700);
+  color: #1a1a2e;
+  padding: 0.5rem 2.5rem;
+  transform: rotate(45deg);
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+  width: 200px;
+  text-align: center;
+  right: -60px;
+  top: 25px;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+
+.reward-card.tier-2::before {
+  height: 8px;
+  background: linear-gradient(90deg, #ffd700, #ffa500, #ff8c00);
+}
+
+.reward-tier {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffd700;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.reward-amount {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin: 1rem 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.reward-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+  text-align: left;
+}
+
+.reward-benefits li {
+  padding: 0.5rem 0;
+  color: #e0e0e0;
+  position: relative;
+  padding-left: 1.5rem;
+  line-height: 1.5;
+}
+
+.reward-benefits li::before {
+  content: '✓';
+  color: #ffd700;
+  position: absolute;
+  left: 0;
+}
+
+/* Submission Guidelines */
+.submission-guidelines {
+  margin: 6rem 0;
+}
+
+.guidelines-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.guideline-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  cursor: pointer;
+}
+
+.guideline-card h3 {
+  color: #ffd700;
+  margin-top: 0;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.guideline-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.guideline-card li {
+  padding: 0.5rem 0;
+  color: #e0e0e0;
+  position: relative;
+  padding-left: 1.5rem;
+  line-height: 1.5;
+}
+
+.guideline-card li::before {
+  content: '•';
+  color: #ffd700;
+  position: absolute;
+  left: 0;
+}
+
+/* Participation Section */
+.participation-section {
+  margin: 6rem 0;
+  text-align: center;
+}
+
+.participation-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.step-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  border-radius: 15px;
+  padding: 2rem 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+}
+
+.step-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #ffd700, #ff8c00);
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.step-card:hover::before {
+  opacity: 1;
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #ff8c00, #ffd700);
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.step-card h3 {
+  color: #ffd700;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.step-card p {
+  color: #e0e0e0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* CTA Section */
+.cta-section {
+  text-align: center;
+  margin: 6rem 0 3rem;
+  padding: 3rem 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(255, 215, 0, 0.05), transparent);
+  z-index: -1;
+}
+
+.cta-section h2 {
+  margin-top: 0;
+  background: none;
+  border: none;
+  padding: 0;
+  color: #ffd700;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-section p {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #f0f0f0;
+}
+
+.form-note {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+.submit-button {
+  background: linear-gradient(45deg, #ff8c00, #ffd700);
+  color: #000;
+  border: none;
+  padding: 1rem 3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.submit-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ffd700, #ff8c00);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.submit-button:hover::before {
+  opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .contest-header h1 {
+    font-size: 3rem;
+  }
+  
+  .reward-card.tier-2 {
+    transform: none;
+    order: 3;
+  }
+  
+  .rewards-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .reward-card {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .contest-content {
+    padding: 4rem 1.5rem;
+  }
+  
+  .contest-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    padding: 0.5rem 1.5rem;
+  }
+  
+  .themes-grid,
+  .guidelines-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .deadline {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contest-header h1 {
+    font-size: 2rem;
+  }
+  
+  .deadline-box {
+    padding: 1rem;
+  }
+  
+  .deadline {
+    font-size: 1.3rem;
+  }
+  
+  .reward-amount {
+    font-size: 2rem;
+  }
+  
+  .submit-button {
+    width: 100%;
+    padding: 1rem;
+  }
+}
