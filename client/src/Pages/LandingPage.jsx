@@ -8,6 +8,7 @@ import Sponsors from '../Components/Sponsors';
 import FAQ from '../Components/FAQ';
 import Footer from '../Components/Footer';
 import ScrollToTop from '../Components/ScrollToTop';
+import ParticipateButton from '../Components/ParticipateButton';
 
 
 // Array of positions and sizes for diyas
@@ -244,6 +245,7 @@ export default function LandingPage() {
       <FAQ />
       <Footer />
       <ScrollToTop />
+      <ParticipateButton isVisible={true} />
     </div>
   );
 }

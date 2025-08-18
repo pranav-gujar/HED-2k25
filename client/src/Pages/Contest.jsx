@@ -6,6 +6,7 @@ import Footer from '../Components/Footer';
 import About from './About';
 import Gallery from './Gallery';
 import ScrollToTop from '../Components/ScrollToTop';
+import ParticipateButton from '../Components/ParticipateButton';
 
 const Contest = () => {
   const themes = [
@@ -302,6 +303,7 @@ const Contest = () => {
       <Gallery/>
       <Footer />
       <ScrollToTop />
+      <ParticipateButton isVisible={true} />
     </div>
   );
 };

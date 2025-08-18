@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 
 const SplineScene = ({ src, className = '' }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -82,21 +83,6 @@ const SplineScene = ({ src, className = '' }) => {
               transition: 'opacity 0.5s ease-in-out',
             }}
             onLoad={handleLoad}
-          />
-          {/* Watermark blur overlay */}
-          <div 
-            style={{
-              position: 'absolute',
-              bottom: '10px',
-              right: '10px',
-              width: '170px',
-              height: '50px',
-              backgroundColor: '#000000',
-              zIndex: 1,
-              pointerEvents: 'none',
-              opacity: isLoaded ? 1 : 0,
-              transition: 'opacity 0.5s ease-in-out'
-            }}
           />
         </>
       )}
