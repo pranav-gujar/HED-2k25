@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-const SplineScene = ({ src, className = '', darkness = 0.7 }) => {
+const SplineScene = ({ src, className = '' }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const iframeRef = useRef(null);
@@ -89,16 +89,13 @@ const SplineScene = ({ src, className = '', darkness = 0.7 }) => {
               position: 'absolute',
               bottom: '10px',
               right: '10px',
-              width: '160px',
-              height: '45px',
-              backdropFilter: 'blur(6px)',
-              backgroundColor: `rgba(0, 0, 0, ${darkness})`,
-              borderRadius: '6px',
+              width: '170px',
+              height: '50px',
+              backgroundColor: '#000000',
               zIndex: 1,
               pointerEvents: 'none',
               opacity: isLoaded ? 1 : 0,
-              transition: 'opacity 0.5s ease-in-out, background-color 0.3s ease',
-              border: '1px solid rgba(255, 255, 255, 0.1)'
+              transition: 'opacity 0.5s ease-in-out'
             }}
           />
         </>
