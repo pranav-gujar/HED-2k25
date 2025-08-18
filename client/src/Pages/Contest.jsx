@@ -5,6 +5,7 @@ import SplineScene from '../Components/SplineScene';
 import Footer from '../Components/Footer';
 import About from './About';
 import Gallery from './Gallery';
+import ScrollToTop from '../Components/ScrollToTop';
 
 const Contest = () => {
   const themes = [
@@ -300,6 +301,7 @@ const Contest = () => {
       <About/>
       <Gallery/>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };

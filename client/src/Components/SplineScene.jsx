@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-const SplineScene = ({ src, className = '' }) => {
+const SplineScene = ({ src, className = '', darkness = 0.7 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const iframeRef = useRef(null);
@@ -61,27 +61,47 @@ const SplineScene = ({ src, className = '' }) => {
       }}
     >
       {isVisible && (
-        <iframe
-          key={src}
-          src={src}
-          title="3D Spline Scene"
-          frameBorder="0"
-          loading="lazy"
-          importance="low"
-          referrerPolicy="no-referrer"
-          sandbox="allow-scripts allow-same-origin"
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            border: 'none',
-            opacity: isLoaded ? 1 : 0,
-            transition: 'opacity 0.5s ease-in-out',
-          }}
-          onLoad={handleLoad}
-        />
+        <>
+          <iframe
+            key={src}
+            src={src}
+            title="3D Spline Scene"
+            frameBorder="0"
+            loading="lazy"
+            importance="low"
+            referrerPolicy="no-referrer"
+            sandbox="allow-scripts allow-same-origin"
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              border: 'none',
+              opacity: isLoaded ? 1 : 0,
+              transition: 'opacity 0.5s ease-in-out',
+            }}
+            onLoad={handleLoad}
+          />
+          {/* Watermark blur overlay */}
+          <div 
+            style={{
+              position: 'absolute',
+              bottom: '10px',
+              right: '10px',
+              width: '160px',
+              height: '45px',
+              backdropFilter: 'blur(6px)',
+              backgroundColor: `rgba(0, 0, 0, ${darkness})`,
+              borderRadius: '6px',
+              zIndex: 1,
+              pointerEvents: 'none',
+              opacity: isLoaded ? 1 : 0,
+              transition: 'opacity 0.5s ease-in-out, background-color 0.3s ease',
+              border: '1px solid rgba(255, 255, 255, 0.1)'
+            }}
+          />
+        </>
       )}
       {!isLoaded && (
         <div style={{

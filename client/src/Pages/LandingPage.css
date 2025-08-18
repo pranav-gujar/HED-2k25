@@ -30,11 +30,40 @@
   align-items: center;
   min-height: 100vh;
   text-align: center;
-  padding: 2rem;
+  padding: 1.5rem;
   color: white;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 100%);
+  
+  /* Add a subtle overlay to make diyas more visible */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.1) 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 1rem;
+    
+    /* Make text more readable on mobile */
+    .welcome-title {
+      font-size: 2.5rem !important;
+      margin-bottom: 1rem !important;
+    }
+    
+    .welcome-subtitle {
+      font-size: 1.8rem !important;
+      margin-bottom: 1.5rem !important;
+    }
+  }
+  
 }
 
 .welcome-content {
@@ -108,11 +137,50 @@
   overflow: hidden;
 }
 
+/* Diya and Rangoli styles */
 .diya, .rangoli {
-  position: absolute;
-  font-size: 2rem;
-  opacity: 0.8;
+  position: fixed;
+  font-size: 2.5rem;
+  opacity: 0.95;
   z-index: 1;
+  pointer-events: none;
+  will-change: transform, opacity;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+/* Make diyas more visible on all screens */
+.diya {
+  font-size: 2rem !important;
+  filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.95)) !important;
+  opacity: 0.95 !important;
+}
+
+/* Adjust for medium screens */
+@media (max-width: 1024px) {
+  .diya {
+    font-size: 2rem !important;
+  }
+}
+
+/* Adjust for small screens */
+@media (max-width: 768px) {
+  .diya {
+    font-size: 1.8rem !important;  /* smaller but visible */
+    opacity: 0.9;
+    display: block !important;     /* force visible */
+  }
+}
+
+/* Adjust for very small screens */
+@media (max-width: 480px) {
+  .diya {
+    font-size: 2.2rem !important;
+  }
 }
 
 /* Position decorative elements */

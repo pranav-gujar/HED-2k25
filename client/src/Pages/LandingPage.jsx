@@ -7,65 +7,113 @@ import SplineScene from '../Components/SplineScene';
 import Sponsors from '../Components/Sponsors';
 import FAQ from '../Components/FAQ';
 import Footer from '../Components/Footer';
+import ScrollToTop from '../Components/ScrollToTop';
 
 
 // Array of positions and sizes for diyas
 const diyaPositions = [
-  // Top left section
-  { top: '10%', left: '10%', scale: 0.8, delay: 0 },
-  { top: '15%', left: '20%', scale: 0.6, delay: 0.5 },
-  { top: '8%', left: '30%', scale: 0.7, delay: 0.2 },
+  // Top left section - adjusted for mobile
+  { top: '5%', left: '5%', scale: 1.2, delay: 0, mobileScale: 1.5 },
+  { top: '12%', left: '20%', scale: 1, delay: 0.5, mobileScale: 1.3 },
   
-  // Top right section
-  { top: '12%', right: '15%', scale: 0.9, delay: 0.3 },
-  { top: '18%', right: '25%', scale: 0.6, delay: 0.7 },
+  // Top right section - adjusted for mobile
+  { top: '8%', right: '5%', scale: 1.3, delay: 0.3, mobileScale: 1.6 },
+  { top: '15%', right: '20%', scale: 0.9, delay: 0.7, mobileScale: 1.2 },
   
-  // Middle left
-  { top: '40%', left: '5%', scale: 0.8, delay: 0.4 },
-  { top: '50%', left: '15%', scale: 0.5, delay: 0.1 },
+  // Middle left - adjusted for mobile
+  { top: '35%', left: '2%', scale: 1.1, delay: 0.4, mobileScale: 1.4 },
+  { top: '50%', left: '10%', scale: 0.9, delay: 0.1, mobileScale: 1.2 },
   
-  // Middle right
-  { top: '45%', right: '10%', scale: 0.7, delay: 0.6 },
-  { top: '55%', right: '20%', scale: 0.9, delay: 0.2 },
+  // Middle right - adjusted for mobile
+  { top: '45%', right: '5%', scale: 1.2, delay: 0.6, mobileScale: 1.5 },
   
-  // Bottom left
-  { bottom: '15%', left: '10%', scale: 0.6, delay: 0.5 },
-  { bottom: '20%', left: '25%', scale: 0.7, delay: 0.3 },
+  // Bottom left - adjusted for mobile
+  { bottom: '15%', left: '5%', scale: 1, delay: 0.5, mobileScale: 1.3 },
   
-  // Bottom right
-  { bottom: '10%', right: '15%', scale: 0.8, delay: 0.4 },
-  { bottom: '25%', right: '5%', scale: 0.6, delay: 0.1 },
+  // Bottom right - adjusted for mobile
+  { bottom: '10%', right: '5%', scale: 1.1, delay: 0.4, mobileScale: 1.4 },
   
-  // Center
-  { top: '60%', left: '50%', scale: 1, delay: 0 },
-  { top: '30%', left: '50%', scale: 0.7, delay: 0.3 },
+  // Center - adjusted for mobile
+  { top: '65%', left: '50%', scale: 1.5, delay: 0, mobileScale: 1.8 },
+  { top: '25%', left: '50%', scale: 1.2, delay: 0.3, mobileScale: 1.5 },
 ];
 
-// Floating Diya component
+// Floating Diya component with improved mobile support
 const FloatingDiya = ({ position }) => {
-  const { top, left, right, bottom, scale, delay } = position;
+  const { top, left, right, bottom, scale, delay, mobileScale } = position;
+  
+  // Get viewport dimensions safely
+  const [dimensions, setDimensions] = React.useState({
+    width: typeof window !== 'undefined' ? window.innerWidth : 1200,
+    height: typeof window !== 'undefined' ? window.innerHeight : 800
+  });
+  
+  // Update dimensions on resize
+  React.useEffect(() => {
+    const handleResize = () => {
+      setDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  
+  const isMobile = dimensions.width <= 1024;
+  const isSmallScreen = dimensions.width <= 480;
+  
+  // Calculate scale based on screen size
+  let finalScale = scale;
+  if (isSmallScreen) {
+    finalScale = (mobileScale || scale * 1.5);
+  } else if (dimensions.width <= 768) {
+    finalScale = (mobileScale || scale * 1.2);
+  }
+  
+  // Adjust positions for different screen sizes
+  const getPosition = (value, isPercentage = true) => {
+    if (!isPercentage) return value;
+    
+    const num = parseFloat(value);
+    if (isNaN(num)) return value;
+    
+    // Ensure the value is within bounds
+    return `${Math.min(95, Math.max(5, num))}%`;
+  };
+  
+  // Don't render if we don't have dimensions yet
+  if (dimensions.width === 0) return null;
   
   return (
     <motion.div
       className="diya"
       style={{
         position: 'fixed',
-        top: top ? top : 'auto',
-        left: left ? left : 'auto',
-        right: right ? right : 'auto',
-        bottom: bottom ? bottom : 'auto',
-        transform: `scale(${scale})`,
+        top: top ? getPosition(top) : 'auto',
+        left: left ? getPosition(left) : 'auto',
+        right: right ? getPosition(right) : 'auto',
+        bottom: bottom ? getPosition(bottom) : 'auto',
+        transform: `scale(${finalScale})`,
         zIndex: 1,
         pointerEvents: 'none',
+        fontSize: isSmallScreen ? '3rem' : '2.5rem',
+        filter: 'drop-shadow(0 0 10px rgba(255, 215, 0, 0.9))',
+        willChange: 'transform, opacity',
+        WebkitBackfaceVisibility: 'hidden',
+        WebkitTransform: 'translateZ(0)',
+        backfaceVisibility: 'hidden',
+        transformStyle: 'preserve-3d',
       }}
-      initial={{ y: 0, rotate: 0, opacity: 0.8 }}
+      initial={{ y: 0, rotate: 0, opacity: 0.9 }}
       animate={{
-        y: [0, -15, 0],
-        rotate: [0, 5, -5, 0],
-        opacity: [0.6, 1, 0.6],
+        y: [0, -8, 0],
+        rotate: [0, 2, -2, 0],
+        opacity: [0.8, 1, 0.8],
       }}
       transition={{
-        duration: 6 + Math.random() * 4, // Random duration between 6-10s
+        duration: isSmallScreen ? 3 + Math.random() * 2 : 5 + Math.random() * 3,
         delay: delay,
         repeat: Infinity,
         repeatType: "reverse",
@@ -109,6 +157,7 @@ export default function LandingPage() {
         <SplineScene 
           src="https://my.spline.design/lostorbinthemountains-8gCRWQca9vfqyLrlPRQmVMjs/"
           className="spline-iframe"
+          darkness={0.8}
         />
       </div>
 
@@ -169,14 +218,6 @@ export default function LandingPage() {
               Happy Eco Diwali
             </motion.h2>
             
-            <Link
-              to="about"
-              smooth={true}
-              duration={500}
-              className="cta-button"
-            >
-              Explore More
-            </Link>
           </motion.div>
           
           <motion.div 
@@ -202,6 +243,7 @@ export default function LandingPage() {
       <Sponsors />
       <FAQ />
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }

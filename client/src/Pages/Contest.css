@@ -27,7 +27,7 @@
 .contest-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 6rem 2rem;
+  padding: 8rem 2rem 4rem; /* Increased top padding */
   position: relative;
   z-index: 1;
 }
@@ -35,9 +35,9 @@
 /* Header Section */
 .contest-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin: 2rem 0 5rem; /* Adjusted margins */
   background: rgba(0, 0, 0, 0.5);
-  padding: 2rem;
+  padding: 2.5rem;
   border-radius: 15px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -85,16 +85,27 @@
 h2 {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 3rem;
+  margin: 0 auto 3rem;
   color: #fff;
   position: relative;
-  display: inline-block;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 0 2rem;
+  display: block;
+  width: 100%;
+  padding: 1rem 2rem;
   background: rgba(0, 0, 0, 0.7);
   border-radius: 50px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  box-sizing: border-box;
+  max-width: fit-content;
+}
+
+/* Ensure participation section headings are centered */
+.participation-section h2,
+.cta-section h2 {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: auto;
+  display: block;
 }
 
 /* Themes Section */
@@ -155,6 +166,10 @@ h2 {
 }
 
 /* Prize Card Section */
+.rewards-section {
+  margin: 5rem 0; /* Added margin to the rewards section */
+}
+
 .single-prize-container {
   display: flex;
   justify-content: center;
