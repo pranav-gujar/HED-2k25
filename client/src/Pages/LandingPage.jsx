@@ -198,7 +198,7 @@ export default function LandingPage() {
                 delay: 0.7
               }}
             >
-              Welcome to PGT's Campaign
+              Welcome to HED 7.0
             </motion.h1>
             
             <motion.h2 
@@ -241,7 +241,7 @@ export default function LandingPage() {
       </section>
 
       <Home />
-      <Sponsors />
+      {/* <Sponsors /> */}
       <FAQ />
       <Footer />
       <ScrollToTop />

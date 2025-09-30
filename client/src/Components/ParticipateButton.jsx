@@ -1,33 +1,31 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const ParticipateButton = ({ isVisible = true }) => {
-  // Google Form URL for participation
-  const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSc5cwDIBskA54X9djZemnynOm1CLAnbdm9iVHEjcCHFBAZYtw/viewform?vc=0&c=0&w=1&flr=0';
-  
+  const navigate = useNavigate();
+
   const handleClick = (e) => {
     e.preventDefault();
-    window.open(googleFormUrl, '_blank', 'noopener,noreferrer');
+    navigate('/contest'); // Navigate to Events page
   };
 
   return (
-    <motion.a 
-      href={googleFormUrl}
-      target="_blank"
-      rel="noopener noreferrer"
+    <motion.a
+      href="/events"
       className="participate-button"
       initial={{ opacity: 0, y: 20 }}
-      animate={{ 
-        opacity: isVisible ? 1 : 0, 
+      animate={{
+        opacity: isVisible ? 1 : 0,
         y: isVisible ? 0 : 20,
       }}
-      transition={{ 
+      transition={{
         duration: 0.5,
-        delay: 0.5
+        delay: 0.5,
       }}
       whileHover={{
         scale: 1.05,
-        boxShadow: '0 0 20px rgba(255, 215, 0, 0.8)'
+        boxShadow: '0 0 20px rgba(255, 215, 0, 0.8)',
       }}
       whileTap={{ scale: 0.95 }}
       style={{
@@ -37,25 +35,27 @@ const ParticipateButton = ({ isVisible = true }) => {
         zIndex: 999,
         cursor: 'pointer',
         textDecoration: 'none',
-        display: 'inline-block'
+        display: 'inline-block',
       }}
       onClick={handleClick}
     >
-      <div style={{
-        position: 'relative',
-        backgroundColor: '#000',
-        color: '#ffd700',
-        padding: '10px 20px',
-        borderRadius: '30px',
-        fontWeight: 'bold',
-        fontSize: '14px',
-        textTransform: 'uppercase',
-        letterSpacing: '1px',
-        border: '2px solid #ffd700',
-        boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)',
-        overflow: 'hidden',
-        top: '70px',
-      }}>
+      <div
+        style={{
+          position: 'relative',
+          backgroundColor: '#000',
+          color: '#ffd700',
+          padding: '10px 20px',
+          borderRadius: '30px',
+          fontWeight: 'bold',
+          fontSize: '14px',
+          textTransform: 'uppercase',
+          letterSpacing: '1px',
+          border: '2px solid #ffd700',
+          boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)',
+          overflow: 'hidden',
+          top: '70px',
+        }}
+      >
         <motion.span
           initial={{ backgroundPosition: '0% 50%' }}
           animate={{
@@ -76,14 +76,15 @@ const ParticipateButton = ({ isVisible = true }) => {
         >
           Participate Now!
         </motion.span>
-        <motion.div 
+        <motion.div
           style={{
             position: 'absolute',
             top: 0,
             left: 0,
             width: '100%',
             height: '100%',
-            background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent)',
+            background:
+              'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent)',
             transform: 'translateX(-100%)',
           }}
           animate={{

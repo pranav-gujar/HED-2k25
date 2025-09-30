@@ -6,43 +6,53 @@ import './FAQ.css';
 const faqItems = [
   {
     id: 1,
-    question: 'Who can participate in the contest?',
-    answer: 'The contest is open to all individuals aged 18 and above. Both amateur and professional photographers/videographers are welcome to participate.'
+    question: 'Who can participate in HED 7.0 events?',
+    answer: 'All college students across India are eligible to participate. Both technical and non-technical backgrounds are welcome depending on the event category.'
   },
   {
     id: 2,
-    question: 'What are the submission guidelines?',
-    answer: 'Submissions should be in JPG/PNG format for photos and MP4 for videos, with a maximum file size of 20MB. All entries must be original work and should not contain any watermarks or signatures.'
+    question: 'Are the events online or offline?',
+    answer: 'All four events of HED 7.0 will be conducted completely online. Participants can join from anywhere.'
   },
   {
     id: 3,
-    question: 'Is there an entry fee?',
-    answer: 'No, participation in the contest is completely free of charge. There are no hidden fees or charges.'
+    question: 'Is there a registration fee?',
+    answer: 'Yes, each event has a nominal registration fee per entry or per team (symbolizing the 7th edition of HED).'
   },
   {
     id: 4,
-    question: 'How will the winners be selected?',
-    answer: 'Entries will be judged by our panel of experts based on creativity, originality, and adherence to the theme. The decision of the judges will be final and binding.'
+    question: 'Can I participate in more than one event?',
+    answer: 'Yes, participants are free to register for multiple events. Each event requires a separate registration and fee.'
   },
   {
     id: 5,
-    question: 'When will the results be announced?',
-    answer: 'The winners will be announced on our website and social media channels on October 30, 2025. All participants will be notified via email.'
+    question: 'Can team participation be done?',
+    answer: 'Yes, depending on the event. EcoNova and Greenathon HackFest allow team entries (up to 4 members). EcoSphere and GreenQuest are solo events.'
   },
   {
     id: 6,
     question: 'What are the prizes?',
-    answer: 'Prizes include cash awards, certificates, and opportunities to showcase your work in our annual exhibition. Please check the Contest page for detailed prize information.'
+    answer: 'Winners will receive exciting cash prizes, certificates, kits, and direct virtual internship opportunities with PGT Global Network.'
   },
   {
     id: 7,
-    question: 'Can I submit multiple entries?',
-    answer: 'Yes, you can submit up to 3 entries per category. However, each entry must be unique and submitted separately.'
+    question: 'How will the evaluation be done?',
+    answer: 'Submissions will be judged by an expert panel based on creativity, innovation, feasibility, and alignment with sustainability. Round-wise shortlisting details are given on the event pages.'
   },
   {
     id: 8,
-    question: 'How will my personal information be used?',
-    answer: 'Your personal information will only be used for the purpose of the contest and will not be shared with third parties without your consent. Please review our Privacy Policy for more details.'
+    question: 'When will the results be announced?',
+    answer: 'Results will be announced after the completion of all rounds for each event, and updates will be shared via email, WhatsApp groups, and PGT Global Network’s official social media handles.'
+  },
+  {
+    id: 9,
+    question: 'Will participants get certificates?',
+    answer: 'Yes, all participants will receive e-certificates, and winners will receive special recognition certificates.'
+  },
+  {
+    id: 10,
+    question: 'Who should I contact for queries?',
+    answer: 'For any queries, participants can reach out to the event coordinators mentioned in the contact section of the posters and Event Registration pages.'
   }
 ];
 
@@ -73,7 +83,7 @@ const FAQ = () => {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Find answers to common questions about the contest and participation
+          Find answers to common questions about the events and participation
         </motion.p>
 
         <div className="faq-grid">
@@ -130,7 +140,7 @@ const FAQ = () => {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <p>Still have questions? Contact us at <a href="mailto:@pgt_global_network">@pgt_global_network</a></p>
+          <p>Still have questions? Contact us at <a href="mailto:office@pgtglobalnetwork.com">office@pgtglobalnetwork.com</a></p>
         </motion.div>
       </div>
     </section>

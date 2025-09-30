@@ -8,6 +8,13 @@ import Gallery from './Gallery';
 import ScrollToTop from '../Components/ScrollToTop';
 import ParticipateButton from '../Components/ParticipateButton';
 
+import HED_Poster from '../assets/Events/HED_poster.png';
+import EcoNova from '../assets/Events/EcoNova.png';
+import EcoSphere from '../assets/Events/EcoSphere.png';
+import Greenathon from '../assets/Events/Greenathon.png';
+import GreenQuest from '../assets/Events/GreenQuest.png';
+
+
 const Contest = () => {
   const themes = [
     {
@@ -30,11 +37,12 @@ const Contest = () => {
   const prize = {
     title: "🏆 Grand Prize",
     benefits: [
-      "Featured on our official social media",
-      "Inclusion in the PGT Handbook",
-      "Special Eco-title certificate"
+      "Win Big with Cash Prizes",
+      "Virtual Internships @ PGT Global Network",
+      "Certificates, Kit and more"
     ]
   };
+
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -67,6 +75,82 @@ const Contest = () => {
         />
       </div>
 
+     {/* Poster Section */}
+     <motion.div 
+  className="poster-section"
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, margin: "-100px" }}
+  transition={{ delay: 0.2 }}
+>
+  <div className="poster-wrapper">
+    <img 
+      src={HED_Poster} 
+      alt="HED 7.0 Poster" 
+      className="event-poster"
+    />
+  </div>
+</motion.div>
+
+{/* Events Grid */}
+<motion.div 
+  className="events-section"
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, margin: "-100px" }}
+  transition={{ delay: 0.3 }}
+>
+  <h2>Our Events</h2>
+  <div className="events-grid">
+    {[
+  { 
+    name: "EcoNova", 
+    poster: EcoNova, 
+    about: "An business idea pitching arena where teams present innovative, sustainable solutions with real impact.", 
+    contact: "Vaibhav Pandit : +91 88309 54915",
+    register: "https://www.linkedin.com/in/dr-lavanya-seshasayee-1587527/"
+  },
+  { 
+    name: "EcoSphere", 
+    poster: EcoSphere, 
+    about: "A creative platform to express your eco-awareness through reels, posters, poems, and digital art.", 
+    contact: "Grishma Chowdary : +91 93927 28020",
+    register: "facebook.com" 
+  },
+  { 
+    name: "Greenathon", 
+    poster: Greenathon, 
+    about: "A hackathon challenge where teams design and build practical eco-tech solutions.", 
+    contact: "Prashik Kamble : +91 93597 64447",
+    register: "topmate.io" 
+  },
+  { 
+    name: "GreenQuest", 
+    poster: GreenQuest, 
+    about: "An exciting Eco olympiad + Problem Solving challenge competition to test your knowledge, awareness, and passion for sustainability.", 
+    contact: "Sharayu Dole : +91 77099 68213",
+    register: "pgtglobalnetwork.com"
+  }
+].map((ev, idx) => (
+      <motion.div key={idx} className="event-card" whileHover={{ y: -5 }}>
+        <img src={ev.poster} alt={ev.name} className="event-image" />
+        <h3>{ev.name}</h3>
+        <p>{ev.about}</p>
+        <p className="contact">Contact: {ev.contact}</p>
+        <a 
+          href={ev.register} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="submit-button"
+        >
+          Register Now
+        </a>
+      </motion.div>
+    ))}
+  </div>
+</motion.div>
+
+
       <div className="contest-content">
         <motion.div
           className="contest-header"
@@ -74,17 +158,17 @@ const Contest = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1>Eco-Diwali Contest 2024</h1>
-          <p className="subtitle">Show us your most creative and sustainable Diwali celebrations!</p>
+          <h1>HED 7.0</h1>
+          <p className="subtitle">Register Now for Events!</p>
           
           <div className="deadline-box">
             <h3>⏰ Important Dates</h3>
-            <p className="deadline">Last date to participate: November 1, 2024</p>
-            <p className="note">Result announcement: November 3, 2024</p>
+            <p className="deadline">Last date of Events Registration: November 25, 2025</p>
+            {/* <p className="note">Result announcement: November 3, 2024</p> */}
           </div>
         </motion.div>
 
-        <motion.div 
+        {/* <motion.div 
           className="themes-section"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -114,7 +198,7 @@ const Contest = () => {
               </motion.div>
             ))}
           </motion.div>
-        </motion.div>
+        </motion.div> */}
 
         <motion.div 
           className="rewards-section"
@@ -192,7 +276,7 @@ const Contest = () => {
           </div>
         </motion.div>
 
-        <motion.div 
+        {/* <motion.div 
           className="submission-guidelines"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -235,7 +319,7 @@ const Contest = () => {
               </ul>
             </motion.div>
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* How to Participate Section */}
         <motion.div 
@@ -252,8 +336,8 @@ const Contest = () => {
               whileHover={{ y: -5, boxShadow: "0 10px 20px rgba(255, 215, 0, 0.1)" }}
             >
               <div className="step-number">1</div>
-              <h3>Read the Guidelines</h3>
-              <p>Review all submission guidelines and requirements above to ensure your entry meets our criteria.</p>
+              <h3>Read about the Events</h3>
+              {/* <p>Review all submission guidelines and requirements to ensure your entry meets our criteria.</p> */}
             </motion.div>
             
             <motion.div 
@@ -262,7 +346,7 @@ const Contest = () => {
             >
               <div className="step-number">2</div>
               <h3>Prepare Your Entry</h3>
-              <p>Create your submission following the theme requirements and format specifications.</p>
+              {/* <p>Create your submission following the theme requirements and format specifications.</p> */}
             </motion.div>
             
             <motion.div 
@@ -270,14 +354,14 @@ const Contest = () => {
               whileHover={{ y: -5, boxShadow: "0 10px 20px rgba(255, 215, 0, 0.1)" }}
             >
               <div className="step-number">3</div>
-              <h3>Submit via Google Form</h3>
-              <p>Click the button below to access our submission form and upload your entry.</p>
+              <h3>Register via Unstop</h3>
+              {/* <p>Click the "Register" button of respective event card.</p> */}
             </motion.div>
           </div>
         </motion.div>
 
         {/* CTA Section */}
-        <motion.div 
+        {/* <motion.div 
           className="cta-section"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -297,7 +381,7 @@ const Contest = () => {
             Submit Your Entry Now
           </motion.a>
           <p className="form-note">You'll be redirected to our secure Google Form for submission</p>
-        </motion.div>
+        </motion.div> */}
       </div>
       <About/>
       <Gallery/>

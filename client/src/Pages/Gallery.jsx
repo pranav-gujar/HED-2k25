@@ -51,7 +51,7 @@ const Gallery = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        Relive the magic of past celebrations
+        Relive the magic of HED
       </motion.p>
 
       <div className="gallery-scroll" ref={scrollRef}>

@@ -39,27 +39,42 @@ const About = () => {
 
   const timeline = [
     {
-      date: "October 1, 2024",
-      title: "Contest Launch",
-      description: "Submission period begins"
+      date: "October 1, 2025",
+      title: "Events Launch",
+      description: "Registration period begins"
     },
     {
-      date: "October 15, 2024",
-      title: "Early Bird Deadline",
-      description: "Submit by this date for early consideration"
+      date: "November 25, 2022",
+      title: "Registration Close",
+      description: "Registration period ends"
     },
     {
-      date: "November 1, 2024",
-      title: "Final Submission Deadline",
-      description: "Last date to participate - All entries must be submitted by 11:59 PM IST"
+      date: "November 26, 2025",
+      title: "Round 1 Starts",
+      description: "Round 1 starts for all events"
     },
     {
-      date: "November 2, 2024",
-      title: "Judging Period",
-      description: "Our panel reviews all submissions"
+      date: "November 30, 2025",
+      title: "Round 1 Ends",
+      description: "Round 1 ends for all events"
     },
     {
-      date: "November 3, 2024",
+      date: "December 01, 2025",
+      title: "Round 2 Starts",
+      description: "Round 2 starts for all events for the shortlisted teams/candidates"
+    },
+    {
+      date: "December 05, 2025",
+      title: "Round 2 Ends",
+      description: "Round 2 ends"
+    },
+    {
+      date: "December 06, 2025",
+      title: "Final Judging Period",
+      description: "Final Evaluation of Round 2 teams/candidates"
+    },
+    {
+      date: "December 15, 2025",
       title: "Winners Announcement",
       description: "All winners will be announced and notified"
     }
@@ -103,16 +118,15 @@ const About = () => {
           animate="visible"
           variants={containerVariants}
         >
-          <motion.h1 variants={itemVariants} className="about-title">
+          {/* <motion.h1 variants={itemVariants} className="about-title">
             Contest Guidelines & Timeline
-          </motion.h1>
+          </motion.h1> */}
           
           {/* Guidelines Section */}
-          <motion.section variants={itemVariants} className="guidelines-section">
+          {/* <motion.section variants={itemVariants} className="guidelines-section">
             <h2> Guidelines</h2>
             
             <div className="guidelines-grid">
-              {/* What to Submit */}
               <motion.div 
                 className="guideline-card"
                 whileHover={{ scale: 1.02 }}
@@ -126,7 +140,6 @@ const About = () => {
                 </ul>
               </motion.div>
               
-              {/* Dos */}
               <motion.div 
                 className="guideline-card"
                 whileHover={{ scale: 1.02 }}
@@ -140,7 +153,6 @@ const About = () => {
                 </ul>
               </motion.div>
               
-              {/* Don'ts */}
               <motion.div 
                 className="guideline-card"
                 whileHover={{ scale: 1.02 }}
@@ -154,7 +166,7 @@ const About = () => {
                 </ul>
               </motion.div>
             </div>
-          </motion.section>
+          </motion.section> */}
 
           {/* Timeline Section */}
           <motion.section variants={itemVariants} className="timeline-section">

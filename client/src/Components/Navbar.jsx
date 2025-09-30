@@ -116,7 +116,7 @@ const Navbar = React.memo(() => {
           className={`nav-link ${location.pathname === '/contest' ? 'active' : ''}`}
           aria-current={location.pathname === '/contest' ? 'page' : undefined}
         >
-          Contest
+          Events
         </RouterLink>
       </div>
 

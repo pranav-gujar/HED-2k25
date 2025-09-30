@@ -4,34 +4,34 @@ import './Home.css';
 
 const journey = [
   {
-    year: '2018',
-    title: 'HED 1.0 - The Beginning',
-    description: 'Launched the first Happy Eco Diwali campaign with a focus on reducing firecracker pollution. Organized awareness drives in 10 cities, reaching over 50,000 people with the message of celebrating a cleaner, greener Diwali.'
-  },
-  {
     year: '2019',
-    title: 'HED 2.0 - Community Engagement',
-    description: 'Expanded to 25 cities with community workshops on making eco-friendly diyas and decorations. Partnered with local artisans to promote sustainable products, reducing plastic waste by 40% during the festival season.'
+    title: 'HED 1.0 - The Spark',
+    description: 'Started the Happy Eco Diwali initiative as a small awareness campaign in school. Focused mainly on spreading the idea of celebrating Diwali with less crackers and more care for the environment.'
   },
   {
     year: '2020',
-    title: 'HED 3.0 - Digital Transformation',
-    description: 'Pivoted to virtual celebrations during the pandemic. Launched an online marketplace for eco-friendly products and conducted webinars on sustainable living. Reached over 1 million people through digital campaigns.'
+    title: 'HED 2.0 - Growing Voices',
+    description: 'The campaign slowly grew, reaching nearby towns and schools through digital posters and word of mouth. Introduced simple activities like eco-friendly rangoli and diya making awareness.'
   },
   {
     year: '2021',
-    title: 'HED 4.0 - Corporate Partnerships',
-    description: 'Forged partnerships with major corporations to promote eco-conscious celebrations. Introduced the "Green Diwali Challenge" that engaged over 500,000 participants in sustainable practices.'
+    title: 'HED 3.0 - Digital Awareness',
+    description: 'Shifted focus to online campaigns due to the pandemic. Created posts and small videos on social media to spread the message of an eco-friendly Diwali. Engagement started increasing among students and youth.'
   },
   {
     year: '2022',
-    title: 'HED 5.0 - Policy Advocacy',
-    description: 'Successfully advocated for stricter regulations on firecracker usage in 5 major cities. Launched the "Million Green Diyas" initiative, distributing solar-powered diyas to promote renewable energy use.'
+    title: 'HED 4.0 - Building Identity',
+    description: 'The campaign became more structured under PGT Global Network. Created a dedicated drive during Diwali week with online content, contests, and small collaborations, making HED a recognized initiative in student circles.'
   },
   {
     year: '2023',
-    title: 'HED 6.0 - Global Movement',
-    description: 'Expanded internationally to 5 countries. Launched the "Eco-Diwali Pledge" campaign, engaging celebrities and influencers to promote sustainable celebrations. Achieved a 60% reduction in firecracker-related pollution in target cities.'
+    title: 'HED 5.0 - Steady Progress',
+    description: 'Continued spreading eco-friendly Diwali awareness mainly online. While participants were few, the campaign kept consistency and built a strong foundation for future impact.'
+  },
+  {
+    year: '2024',
+    title: 'HED 6.0 - Innovation Contest',
+    description: 'Organized the first-ever online Innovation Ideas Contest under HED. Students submitted creative ideas for celebrating Diwali in sustainable ways. This marked a turning point, bringing a more engaging and interactive format to HED.'
   }
 ];
 
@@ -91,10 +91,9 @@ export default function Home() {
           viewport={{ once: true }}
           transition={{ delay: 0.3, duration: 0.8 }}
         >
-          <h3>Looking Ahead</h3>
+          <h3>Looking Ahead – HED 7.0 and Beyond</h3>
           <p>
-            As we celebrate our 6th anniversary, we remain committed to our mission of promoting sustainable celebrations. 
-            Our goal is to make eco-friendly Diwali the norm, not the exception, and we're excited to have you join us on this journey.
+            HED 7.0 is a new chapter — an international, fully-online edition that turns ideas into action. This year we present four flagship competitions: EcoNova (sustainable startup pitches), Greenathon HackFest (tech-driven prototypes and green hacks), EcoSphere (reels, photography, posters and digital art to spark awareness), and GreenQuest (a Green Olympiad followed by future-focused solution briefs). Winners will receive cash awards, e-certificates, and direct virtual internship opportunities, while top entries will be featured across PGT platforms and compiled in the PGT Handbook. Concluding with tree-plantations and community outreach, HED 7.0 aims to convert youth creativity and knowledge into measurable environmental impact.
           </p>
         </motion.div>
       </motion.div>

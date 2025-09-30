@@ -595,3 +595,102 @@ h2 {
     padding: 1rem;
   }
 }
+
+.poster-section {
+  margin: 6rem auto 4rem auto;
+  text-align: center;
+  max-width: 1200px;
+  padding: 0 2rem;
+}
+
+.poster-wrapper {
+  border-radius: 30px;        
+  overflow: hidden;         
+  display: inline-block;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+}
+
+.event-poster {
+  width: 100%;
+  height: auto;              
+  object-fit: contain;        
+  border-radius: 30px;       
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-poster:hover {
+  transform: scale(1.02);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+
+.events-section {
+  margin: 6rem auto;
+  text-align: center;
+  max-width: 1200px; 
+  padding: 0 2rem;  
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 2.5rem; 
+  justify-content: center;
+  align-items: stretch;
+  margin-top: 3rem;
+}
+
+.event-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 2rem 1.5rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.event-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.event-card h3 {
+  color: #ffd700;
+  margin: 1rem 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+.event-card p {
+  color: #e0e0e0;
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.event-card .contact {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-top: 0.5rem;
+}
+
+.event-card .submit-button {
+  margin-top: 1.5rem;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .events-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

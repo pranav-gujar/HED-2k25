@@ -9,30 +9,30 @@ const Footer = () => {
   
   // Social media icons
   const socialMedia = [
-    { name: 'Facebook', icon: 'fab fa-facebook-f', url: 'https://www.facebook.com/people/Pranav-Gujar/pfbid0HYUpa7drv9hn2VxZKDuuQDKu9EzMbk1fk1TVi9itnZTygZx6uzr3RNwDqbpUdBzTl/' },
-    { name: 'Instagram', icon: 'fab fa-instagram', url: 'https://www.instagram.com/mr.pranav_gujar_official_/' },
-    { name: 'LinkedIn', icon: 'fab fa-linkedin-in', url: 'https://www.linkedin.com/in/pranav-gujar-54551b226/?originalSubdomain=in' },
-    { name: 'YouTube', icon: 'fab fa-youtube', url: 'https://www.youtube.com/channel/UCDNZe2puEVadKJnZ_PL3dCg' },
+    // { name: 'Facebook', icon: 'fab fa-facebook-f', url: 'https://www.facebook.com/people/Pranav-Gujar/pfbid0HYUpa7drv9hn2VxZKDuuQDKu9EzMbk1fk1TVi9itnZTygZx6uzr3RNwDqbpUdBzTl/' },
+    { name: 'Instagram', icon: 'fab fa-instagram', url: 'https://www.instagram.com/pgt_global_network/' },
+    { name: 'LinkedIn', icon: 'fab fa-linkedin-in', url: 'https://www.linkedin.com/company/pgt-global-network/posts/?feedView=all' },
+    { name: 'YouTube', icon: 'fab fa-youtube', url: 'https://www.youtube.com/@PGTGlobalNetwork' },
   ];
 
   // Quick links
   const quickLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Contest', path: '/contest' },
+    { name: 'Events', path: '/contest' },
   ];
 
-  // Prizes information
+  // Prizes informations
   const prizes = [
-    { icon: 'fas fa-star', text: 'Featured on our official social media' },
-    { icon: 'fas fa-book', text: 'Inclusion in the PGT Handbook' },
-    { icon: 'fas fa-award', text: 'Receive a special Eco-title certificate' },
+    { icon: 'fas fa-star', text: 'Win Big with Cash Prizes ' },
+    { icon: 'fas fa-book', text: 'Virtual Internships @ PGT Global Network' },
+    { icon: 'fas fa-award', text: 'Certificates, Kit and more' },
   ];
 
   // Legal links
   const legalLinks = [
-    { name: 'Privacy Policy', url: 'https://pgtnetworks.com/privacy' },
-    { name: 'Terms & Conditions', url: 'https://pgtnetworks.com/terms' },
-    { name: 'Cookie Policy', url: 'https://pgtnetworks.com/cookies' },
+    { name: 'Privacy Policy', url: 'https://www.pgtglobalnetwork.com' },
+    { name: 'Terms & Conditions', url: 'https://www.pgtglobalnetwork.com' },
+    // { name: 'Cookie Policy', url: 'https://pgtnetworks.com/cookies' },
   ];
 
   return (
@@ -53,7 +53,7 @@ const Footer = () => {
               className="footer-logo-img"
               loading="lazy"
             />
-            <span>HED Celebration</span>
+            <span>HED 7.0</span>
           </div>
           <p className="footer-description">
             Celebrating sustainable living and environmental consciousness through art and innovation.
@@ -114,7 +114,7 @@ const Footer = () => {
         </motion.div>
 
         {/* Newsletter */}
-        <motion.div 
+        {/* <motion.div 
           className="footer-section"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -134,7 +134,7 @@ const Footer = () => {
               <i className="fas fa-paper-plane"></i>
             </button>
           </form>
-        </motion.div>
+        </motion.div> */}
       </div>
 
       {/* Bottom Bar */}
@@ -142,7 +142,7 @@ const Footer = () => {
         <div className="container">
           <div className="footer-bottom-content">
             <p className="copyright">
-              &copy; {currentYear} HED Celebration. All rights reserved.
+              &copy; {currentYear} HED 7.0. All rights reserved.
             </p>
             <div className="legal-links">
               {legalLinks.map((link, index) => (
