@@ -1,10 +1,10 @@
-# HED Celebration
+# HED 7.0
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![React](https://img.shields.io/badge/React-18.2.0-61DAFB?logo=react)](https://reactjs.org/)
 [![Vite](https://img.shields.io/badge/Vite-4.4.0-646CFF?logo=vite)](https://vitejs.dev/)
 
-A modern, responsive web application for the HED (Hindu Environment Day) Celebration, featuring event information, photo/video galleries, contest details, and more.
+A modern, responsive web application for the HED 7.0, featuring event information, photo/video galleries, contest details, and more.
 
 ## ✨ Features
 
@@ -27,7 +27,7 @@ A modern, responsive web application for the HED (Hindu Environment Day) Celebra
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/hed-celebration.git
+   git clone [https://github.com/your-username/hed-celebration.git](https://github.com/pranav-gujar/HED-2k25.git)
    cd hed-celebration
    ```
 
@@ -81,18 +81,6 @@ hed-celebration/
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🤝 Contributing
-
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📧 Contact
-
-For inquiries, please contact us at [your-email@example.com](mailto:your-email@example.com)
 
 ## 🙏 Acknowledgments
 
