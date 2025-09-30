@@ -38,7 +38,7 @@ const Contest = () => {
     title: "🏆 Grand Prize",
     benefits: [
       "Win Big with Cash Prizes",
-      "Virtual Internships @ PGT Global Network",
+      "Internships @ PGT Global Network",
       "Certificates, Kit and more"
     ]
   };
@@ -107,29 +107,29 @@ const Contest = () => {
     name: "EcoNova", 
     poster: EcoNova, 
     about: "An business idea pitching arena where teams present innovative, sustainable solutions with real impact.", 
-    contact: "Vaibhav Pandit : +91 88309 54915",
-    register: "https://www.linkedin.com/in/dr-lavanya-seshasayee-1587527/"
+    contact: "Vaibhav Pandit : +91 8830954915",
+    register: "https://unstop.com/o/ZH4uFQ2?utm_medium=Share&utm_source=pranaguj61526&utm_campaign=Competitions"
   },
   { 
     name: "EcoSphere", 
     poster: EcoSphere, 
     about: "A creative platform to express your eco-awareness through reels, posters, poems, and digital art.", 
-    contact: "Grishma Chowdary : +91 93927 28020",
-    register: "facebook.com" 
+    contact: "Grishma Chowdary : +91 9392728020",
+    register: "https://unstop.com/o/KEaZ5OU?utm_medium=Share&utm_source=pranaguj61526&utm_campaign=Events" 
   },
   { 
     name: "Greenathon", 
     poster: Greenathon, 
     about: "A hackathon challenge where teams design and build practical eco-tech solutions.", 
-    contact: "Prashik Kamble : +91 93597 64447",
-    register: "topmate.io" 
+    contact: "Prashik Kamble : +91 9359764447",
+    register: "https://unstop.com/o/VI2j9x7?lb=b59S0t04&utm_medium=Share&utm_source=pranaguj61526&utm_campaign=Innovation_challenge" 
   },
   { 
     name: "GreenQuest", 
     poster: GreenQuest, 
     about: "An exciting Eco olympiad + Problem Solving challenge competition to test your knowledge, awareness, and passion for sustainability.", 
-    contact: "Sharayu Dole : +91 77099 68213",
-    register: "pgtglobalnetwork.com"
+    contact: "Sharayu Dole : +91 7709968213",
+    register: "https://unstop.com/o/cio4aKF?lb=b59S0t04&utm_medium=Share&utm_source=pranaguj61526&utm_campaign=Quizzes"
   }
 ].map((ev, idx) => (
       <motion.div key={idx} className="event-card" whileHover={{ y: -5 }}>

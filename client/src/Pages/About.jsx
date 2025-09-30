@@ -44,7 +44,7 @@ const About = () => {
       description: "Registration period begins"
     },
     {
-      date: "November 25, 2022",
+      date: "November 25, 2025",
       title: "Registration Close",
       description: "Registration period ends"
     },
